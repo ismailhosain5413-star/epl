@@ -1,0 +1,472 @@
+<!doctype html>
+<html lang="bn">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Estrovia Private Limited</title>
+  <meta name="description" content="Estrovia Pvt Ltd — Social & Search SEO packages. Order via WhatsApp.">
+  <style>
+    /* --- Base / Dark Theme --- */
+    :root{
+      --bg:#0b0b0c; --surface:#121214; --muted:#9aa3ac; --accent:#ff7a00; --accent-2:#ffbe3d;
+      --glass: rgba(255,255,255,0.03);
+    }
+    *{box-sizing:border-box}
+    html,body{height:100%;margin:0;font-family:Inter, system-ui, -apple-system, 'Segoe UI', Roboto, Arial;color:#e7eef6;background:linear-gradient(180deg,var(--bg),#070708);}
+    a{color:inherit;text-decoration:none}
+    img{max-width:100%;display:block}
+
+    /* --- Header --- */
+    header{
+      position:sticky; top:0; z-index:40;
+      display:flex;align-items:center;justify-content:space-between;padding:16px 24px;
+      background:linear-gradient(180deg, rgba(10,10,10,0.85), rgba(10,10,10,0.6));
+      border-bottom:1px solid rgba(255,255,255,0.03);backdrop-filter: blur(6px);
+    }
+    .brand{display:flex;align-items:center;gap:12px}
+    .logo{
+      width:48px;height:48px;border-radius:10px;display:flex;align-items:center;justify-content:center;
+      background:linear-gradient(135deg,var(--accent),var(--accent-2));color:#08121a;font-weight:900;font-size:18px;
+      box-shadow:0 8px 30px rgba(255,122,0,0.08);
+    }
+    .brand .title{font-weight:800;font-size:16px}
+    .live{background:linear-gradient(90deg,#ff9a3c,#ff7a00);color:#041016;padding:8px 12px;border-radius:999px;font-weight:800;box-shadow:0 10px 30px rgba(255,122,0,0.06);font-size:13px;animation: pulse 1.8s infinite;}
+    @keyframes pulse{0%{opacity:1}50%{opacity:.5}100%{opacity:1}}
+
+    /* --- Hero --- */
+    .hero{padding:64px 20px 36px;text-align:center}
+    .hero h1{font-size:34px;margin:0 0 8px;font-weight:900;letter-spacing:-0.6px}
+    .hero p{max-width:780px;margin:0 auto;color:var(--muted);font-size:15px}
+    .hero-actions{margin-top:18px;display:flex;gap:12px;justify-content:center;align-items:center}
+
+    /* --- 3D Button --- */
+    .btn3d{
+      --y: 6px;
+      display:inline-flex;align-items:center;gap:10px;padding:12px 20px;border-radius:12px;
+      font-weight:800;font-size:15px;color:#07121a;background:linear-gradient(90deg,var(--accent),var(--accent-2));
+      border:none;cursor:pointer;box-shadow:0 var(--y) 0 #c86100, 0 10px 30px rgba(0,0,0,0.6);
+      transform:translateY(0);transition:transform .18s ease, box-shadow .18s ease;
+    }
+    .btn3d:hover{transform:translateY(-4px);box-shadow:0 16px 40px rgba(0,0,0,0.6)}
+    .btn3d:active{transform:translateY(6px);box-shadow:0 0 0 transparent}
+
+    /* --- Layout / container --- */
+    .container{max-width:1180px;margin:28px auto;padding:0 20px}
+    .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:18px}
+
+    /* --- Package card --- */
+    .card{
+      background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
+      border:1px solid rgba(255,255,255,0.03);
+      padding:18px;border-radius:14px;position:relative;overflow:hidden;
+      box-shadow:0 8px 30px rgba(2,6,23,0.6);
+      transition:transform .28s ease, box-shadow .28s ease;
+    }
+    .card:hover{transform:translateY(-8px);box-shadow:0 18px 60px rgba(0,0,0,0.7)}
+    .card img{border-radius:10px;height:140px;object-fit:cover}
+    .card h3{margin:12px 0 6px;font-size:18px}
+    .card p.desc{color:var(--muted);font-size:14px;margin:0 0 10px;min-height:40px}
+    .price{font-weight:900;font-size:20px;margin:10px 0;background:linear-gradient(90deg,var(--accent),var(--accent-2));-webkit-background-clip:text;color:transparent}
+
+    .card .actions{display:flex;gap:8px;align-items:center;margin-top:10px}
+    .btn-ghost{
+      background:transparent;border:1px solid rgba(255,255,255,0.06);padding:10px 12px;border-radius:10px;color:var(--muted);cursor:pointer;font-weight:700
+    }
+
+    /* --- upload preview --- */
+    .upload-wrap{margin-top:10px;display:flex;gap:10px;align-items:center}
+    .upload-preview{width:64px;height:64px;border-radius:8px;object-fit:cover;border:1px solid rgba(255,255,255,0.04);display:block}
+
+    /* --- brand row --- */
+    .brands{margin:42px auto 12px;max-width:980px;text-align:center}
+    .brands h4{color:#fff;margin-bottom:12px}
+    .brand-row{display:flex;gap:18px;flex-wrap:wrap;justify-content:center;align-items:center}
+    .brand-row img{height:44px;object-fit:contain;filter:brightness(.85);transition:transform .18s ease}
+    .brand-row img:hover{transform:translateY(-6px);filter:brightness(1)}
+
+    /* --- footer / links --- */
+    footer{padding:34px 20px 70px;color:var(--muted);text-align:center;border-top:1px solid rgba(255,255,255,0.03);margin-top:28px}
+    .footer-links{display:flex;gap:12px;justify-content:center;margin-bottom:8px}
+    .footer-links a{color:var(--muted);font-size:13px}
+
+    /* --- floating whatsapp --- */
+    .whatsapp-float{
+      position:fixed;right:20px;bottom:22px;width:60px;height:60px;border-radius:50%;
+      background:linear-gradient(45deg,#20c997,#25d366);display:flex;align-items:center;justify-content:center;cursor:pointer;
+      box-shadow:0 10px 40px rgba(0,0,0,0.6);z-index:60;transition:transform .2s ease;
+      animation: floaty 3s ease-in-out infinite;
+    }
+    .whatsapp-float:hover{transform:translateY(-6px)}
+    @keyframes floaty{0%{transform:translateY(0)}50%{transform:translateY(-8px)}100%{transform:translateY(0)}}
+
+    /* --- modal (privacy/terms) --- */
+    .modal-backdrop{position:fixed;inset:0;background:rgba(2,6,23,0.6);display:flex;align-items:center;justify-content:center;z-index:80}
+    .modal{width:min(900px,94%);max-height:86vh;overflow:auto;background:linear-gradient(180deg,#0b0b0b,#0f0f10);padding:22px;border-radius:12px;border:1px solid rgba(255,255,255,0.03)}
+    .modal h3{margin-top:0}
+    .close-x{position:absolute;right:14px;top:12px;background:transparent;border:0;color:var(--muted);font-weight:800;font-size:20px;cursor:pointer}
+
+    /* --- small screens --- */
+    @media (max-width:840px){
+      .hero h1{font-size:28px}
+      .hero p{padding:0 12px}
+      .card img{height:120px}
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Header -->
+  <header>
+    <div class="brand">
+      <div class="logo">E</div>
+      <div>
+        <div class="title">Estrovia Private Limited</div>
+        <div style="font-size:12px;color:var(--muted)">Social & Search SEO </div>
+      </div>
+    </div>
+
+    <div style="display:flex;gap:12px;align-items:center">
+      <div class="live">LIVE SUPPORT • 24/7</div>
+      <nav style="display:flex;gap:12px;align-items:center">
+        <a href="#packages" style="color:var(--muted);font-weight:700">প্যাকেজ</a>
+        <a href="#brands" style="color:var(--muted);font-weight:700">ব্র্যান্ড</a>
+        <a href="#" onclick="openModal('privacy');return false" style="color:var(--muted);font-weight:700">প্রাইভেসি</a>
+        <a href="#" onclick="openModal('terms');return false" style="color:var(--muted);font-weight:700">শর্ত</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Hero -->
+  <section class="hero">
+    <h1>অত্যাধুনিক Social & Search SEO সার্ভিস</h1>
+    <p>Facebook, Instagram, X, YouTube, Google Search, TikTok — এক জায়গায় সম্পূর্ণ ডিজিটাল বৃদ্ধির পরিকল্পনা। প্রতিটি প্যাকেজে ছবি যোগ করার অপশন আছে যাতে আপনি আপনার কনটেন্ট দ্রুত শেয়ার করতে পারেন।</p>
+
+    <div class="hero-actions">
+      <button class="btn3d" onclick="openModal('contact')">এক্সপ্রেস অর্ডার</button>
+      <button class="btn3d" style="background:#0b1220;color:#fff;border:1px solid rgba(255,255,255,0.04)" onclick="scrollToPackages()">সব প্যাকেজ দেখুন</button>
+    </div>
+  </section>
+
+  <div class="container">
+
+    <!-- Packages -->
+    <section id="packages">
+      <h2 style="color:#fff;margin-bottom:16px;font-weight:900">আমাদের প্যাকেজ সমূহ</h2>
+
+      <div class="grid" id="packageGrid">
+
+        <!-- Facebook SEO -->
+        <article class="card" data-id="facebook-seo">
+          <img src="https://www.outfy.com/blog/wp-content/uploads/2025/04/Facebook-SEO-Guide.webp" alt="Facebook SEO">
+          <h3>Facebook SEO</h3>
+          <p class="desc">ফেসবুক পেইজ অপটিমাইজেশন, সার্চে র‍্যাঙ্কিং বৃদ্ধির কৌশল ও ব্র্যান্ড রিচ বুস্ট।</p>
+          <div class="price">৳ ১,২০০</div>
+
+          <div class="upload-wrap">
+
+          </div>
+
+          <div class="actions">
+            <button class="btn3d" onclick="orderPackage('Facebook SEO','৳ ১,২০০')">Order via WhatsApp</button>
+            <button class="btn-ghost" onclick="openDetails('Facebook SEO','ফেসবুক পেইজ অপ্টিমাইজেশন, সার্চ র‍্যাঙ্কিং & এনগেজমেন্ট বুস্ট।','৳ ১,২০০')">View</button>
+          </div>
+        </article>
+
+        <!-- Instagram SEO -->
+        <article class="card" data-id="instagram-seo">
+          <img src="https://assets.cdn.thewebconsole.com/S3WEB436/blogImages/6233d03835ecd.jpg" alt="Instagram SEO">
+          <h3>Instagram SEO</h3>
+          <p class="desc">ইনস্টাগ্রাম প্রোফাইল অপ্টিমাইজেশন, হ্যাশট্যাগ স্ট্র্যাটেজি ও এক্সপ্লোর বুস্ট।</p>
+          <div class="price">৳ ১,৫০০</div>
+
+          <div class="upload-wrap">
+
+          </div>
+
+          <div class="actions">
+            <button class="btn3d" onclick="orderPackage('Instagram SEO','৳ ১,৫০০')">Order via WhatsApp</button>
+            <button class="btn-ghost" onclick="openDetails('Instagram SEO','ইনস্টাগ্রাম এক্সপ্লোর ও প্রোফাইল রিচ বুস্ট।','৳ ১,৫০০')">View</button>
+          </div>
+        </article>
+
+        <!-- X (Twitter) SEO -->
+        <article class="card" data-id="x-seo">
+          <img src="https://b4151260.smushcdn.com/4151260/wp-content/uploads/2024/03/Content-Blog-Banner_Q1-2024_1125x600_059_Twitter-Seo.png?lossy=1&strip=1&webp=1" alt="X SEO">
+          <h3>X (Twitter) SEO</h3>
+          <p class="desc">টুইট হ্যাশট্যাগ কাস্টোমাইজেশন, কীওয়ার্ড ট্র্যাকিং এবং রিচ অপটিমাইজেশন।</p>
+          <div class="price">৳ ১,৩০০</div>
+
+          <div class="upload-wrap">
+
+          </div>
+
+          <div class="actions">
+            <button class="btn3d" onclick="orderPackage('X (Twitter) SEO','৳ ১,৩০০')">Order via WhatsApp</button>
+            <button class="btn-ghost" onclick="openDetails('X (Twitter) SEO','হ্যাশট্যাগ ও কীওয়ার্ড র‍্যাঙ্কিং বাড়িয়ে প্রোফাইলকে ভাইরালযোগ্য করুন।','৳ ১,৩০০')">View</button>
+          </div>
+        </article>
+
+        <!-- Facebook Boost -->
+        <article class="card" data-id="facebook-boost">
+          <img src="https://email.uplers.com/blog/wp-content/uploads/2020/05/Fetaure-Image.png" alt="Facebook Boost">
+          <h3>Facebook Boost</h3>
+          <p class="desc">টার্গেটেড অডিয়েন্স, এড সেটআপ ও কনভার্শন অপটিমাইজেশন (Ads support)।</p>
+          <div class="price">৳ ২,০০০</div>
+
+          <div class="upload-wrap">
+
+          </div>
+
+          <div class="actions">
+            <button class="btn3d" onclick="orderPackage('Facebook Boost','৳ ২,০০০')">Order via WhatsApp</button>
+            <button class="btn-ghost" onclick="openDetails('Facebook Boost','টার্গেটেড বুস্ট + উচ্চমানের কনভার্শন।','৳ ২,০০০')">View</button>
+          </div>
+        </article>
+
+        <!-- YouTube Boost -->
+        <article class="card" data-id="youtube-boost">
+          <img src="https://www.aandmedu.in/wp-content/uploads/2022/02/YouTube-Ads-1024x658.png" alt="YouTube Boost">
+          <h3>YouTube Boost</h3>
+          <p class="desc">ভিডিও SEO, watch-time বৃদ্ধি, ট্যাগ ও থাম্বনেইল অপ্টিমাইজেশন।</p>
+          <div class="price">৳ ২,৫০০</div>
+
+          <div class="upload-wrap">
+
+          </div>
+
+          <div class="actions">
+            <button class="btn3d" onclick="orderPackage('YouTube Boost','৳ ২,৫০০')">Order via WhatsApp</button>
+            <button class="btn-ghost" onclick="openDetails('YouTube Boost','ভিডিও র‍্যাঙ্ক, ওয়াচটাইম & SEO বুস্ট।','৳ ২,৫০০')">View</button>
+          </div>
+        </article>
+
+        <!-- Google Search SEO -->
+        <article class="card" data-id="google-seo">
+          <img src="https://framerusercontent.com/images/8fY4q8vHfeOrUPdsnuE6ibQ2M.png" alt="Google Search SEO">
+          <h3>Google Search SEO</h3>
+          <p class="desc">ওয়েবসাইটের সার্চ র‍্যাঙ্কিং বাড়ানো, টেকনিক্যাল ও কন্টেন্ট অপ্টিমাইজেশন।</p>
+          <div class="price">৳ ৩,০০০</div>
+
+          <div class="upload-wrap">
+
+          </div>
+
+          <div class="actions">
+            <button class="btn3d" onclick="orderPackage('Google Search SEO','৳ ৩,০০০')">Order via WhatsApp</button>
+            <button class="btn-ghost" onclick="openDetails('Google Search SEO','ওয়েবসাইট গুগল র‍্যাঙ্কিং বাড়ানোর সম্পূর্ণ পরিষেবা।','৳ ৩,০০০')">View</button>
+          </div>
+        </article>
+
+        <!-- TikTok Boost -->
+        <article class="card" data-id="tiktok-boost">
+          <img src="https://media.licdn.com/dms/image/v2/D4D10AQGePtclfoW7zg/image-shrink_1280/image-shrink_1280/0/1735381654300?e=2147483647&v=beta&t=tYe4QXq1fiuiX45sMbfXP0m3lcYqEmMJ6npx7Hmzhto" alt="TikTok Boost">
+          <h3>TikTok Boost</h3>
+          <p class="desc">ভিডিও ভাইরাল অপ্টিমাইজেশন, ট্রেন্ডিং হুকস ও SEO বুস্ট।</p>
+          <div class="price">৳ ১,৮০০</div>
+
+          <div class="upload-wrap">
+
+          </div>
+
+          <div class="actions">
+            <button class="btn3d" onclick="orderPackage('TikTok Boost','৳ ১,৮০০')">Order via WhatsApp</button>
+            <button class="btn-ghost" onclick="openDetails('TikTok Boost','টিকটক ভাইরাল সম্ভাবনা + SEO অ্যালগরিদম বুস্ট।','৳ ১,৮০০')">View</button>
+          </div>
+        </article>
+
+      </div>
+    </section>
+
+    <!-- Brands -->
+    <section id="brands" class="brands">
+      <h4>ব্র্যান্ড যারা আমাদের সাথে কাজ করেছে</h4>
+      <div class="brand-row">
+        <img src="https://sparkedhost.com/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Flogo-text.edb06693.png&w=640&q=75" alt="">
+        <img src="data:image/webp;base64,UklGRrYEAABXRUJQVlA4WAoAAAAQAAAAfwAAdAAAQUxQSEoEAAABoFRbT55ti4RIQAISkIAEJCABCZWAhEqIhEpAQobf7Bo8LeHvfr9pREwAbeyyKP62OzH93ijor+HHeIG98g/hC0M1/4ykGP2En+AFMysfjy9M1ny4pJj/hIN5wZqVD8UXltV8pKiwP1cOIZTaTMATjuMEZi2Ovn1VC3DxUbjArIWp31UTNB0kNpirI3sQCyD+EE5glkBjU7MAFx+AC8wt0XAuaoGm7WKDVQvTTFctgPitnMBcHc0OYgEu3oYLzBLImp2NKDULNG0SG6wtkf3OI4iLGgDxGziBVQuT2SU8cQSRqxbg4sW4wFwd2f0NQCuPIApigaalYoNVAg1ulcanZgDEL+ME1pao28eeGicQFzUAF69RYNXC1BsEXYFnELlqgaYFQoO1OuoNAjRaOYgBED/J3bBKoF6+ACAvRZSaASg8oyiMLVF3VPx1ixEXNaDFYe6BUQtT94XXh9Z31QDcPMYrjNVRNz94LxsQBTHg4RFe0S+B+r3iM2xBlFofHrY5RXdLZPSKb9qVi3bhsT3o1cJk9IpvWYm5i8jVLlyWjF5xZPWKzmulGA1EofXA97H2VDKzoresVKuJ+OmRvozOSmZ+0B3WCZfqFSzETwdCV+u4yV6xB2cBJLOFuHXUHo9vZVuEkTv8JCK6bxoZOrQndyQys1qo8+ZpKQ2h+gXfcX81+su5p2Ic0jTnxriO3CFf10uSjoBxEfe04c9X6Whf4U8QJPcho8LVAOidtihftQPfRMRVAYh/iRjFsTbond0W4UsGNHq9lOldBoQXIvK4aFOeIW+h0nvADNK4Cy1A8aOOyB2VDvbJGFk6uM/lI6Uh0mHM95HuITqG04PsDoSxfoSrDdA7HCcMyiOIqDZaeJ0y6B4UrxPJIPAY9ifSUWnMXN4Go5/l/LVLGAa/Wn6OU1cTuE3SOLi1GEiblAl1rQQInwZ+GU5V8VeyP4uMSwYv6GzpKMijuBmIONYG4M6Oeo+gblCCtxCRByoZlwlT8IyJgjvYSBFPhGtAxqsmUwVv4iYh2YijQCLZk9AmNAvRRpTgaSDnbZ5Z6gew0pLr1FlQb6N0ljQNmmyLruPmAfls1BbAzUe7VkALJ/NLABefi9oa0HSg6y0vArR0nBZeWFcBWuYpjlfzuF6orAPgTjzIJdHlMp431pUASAlscPF6ABRaK14K3MkREZXFXkXK6yWC98ZLZXzfjojbBiMTLUUcqwJ3dvQ3nkBoMSLKeOj73k/dBh5XB7ftEm1ALXaQ363SFpW6014P78F9dO2kTHuY6z7q6QxUd1FPp6C6h3paRaSUUmLwEyjv8DANDiGVUqpcHWtGXa4yHdY9a2mmRcvS8t9C7Sqr4n8/9covobE/KvQ+vyR04n9/GHqwMJKGHozGhoEHC/Y/+On/BmWqHKFM/TO3HIG2/kU4/r9Pmd6mlenz5ss0Ov5PSyIiOk3++kMVrBsOlWRdvxJWUDggRgAAAHAGAJ0BKoAAdQA+kUihTKWkIyIgiACwEglpbuF0kABPbYi8QVHPbEXiCo57Yi8QVHPbEXiCo57Yi8QTYAD+/0X4AAAAAAA=" alt="">
+        <img src="https://gbnodes.host/assets/images/gblugu.webp" alt="">
+        <img src="https://applemc.fun/uploads/51ecf29f4c37534f4b4c85485622ad153f5f0912logo.webp" alt="">
+        <img src="https://dunb17ur4ymx4.cloudfront.net/webstore/logos/63e9f1629ac7d8ec4a3b58bf81c34e16ce4c699f.png" alt="">
+        <img src="https://pebblehost.com/src/img/logos/main.png" alt="">
+      </div>
+    </section>
+
+  </div> <!-- container -->
+
+  <!-- Footer -->
+  <footer>
+    <div class="footer-links">
+      <a href="#" onclick="openModal('privacy');return false">প্রাইভেসি পলিসি</a>
+      <a href="#" onclick="openModal('terms');return false">টার্মস & কন্ডিশন</a>
+    </div>
+    © <span id="year"></span> Estrovia Private Limited — All Rights Reserved
+  </footer>
+
+  <!-- Floating WhatsApp -->
+  <div class="whatsapp-float" title="WhatsApp Support" onclick="openWhatsAppSupport()">
+    <svg width="28" height="28" viewBox="0 0 24 24" fill="none" aria-hidden>
+      <path d="M20.5 3.5L3.5 20.5V24l3.5-.9L20.5 6.5A3.5 3.5 0 0020.5 3.5z" fill="#fff" opacity="0.06"/>
+      <path d="M20.1 3.9a4.3 4.3 0 00-6.1 0l-.5.5-.6-.2a7.2 7.2 0 00-5.3.8 7.6 7.6 0 00-2.3 2.6L3 12.7l.1 3.6 3.5-1.1a7.4 7.4 0 003.4.9c4 0 7.2-3.1 7.2-7 0-1.9-.7-3.6-2-4.9z" fill="#fff"/>
+    </svg>
+  </div>
+
+  <!-- Modal / Privacy / Terms / Contact (hidden by default) -->
+  <div id="modalRoot" style="display:none;"></div>
+
+  <script>
+    /***** Configuration ******/
+    // Phone in international format (no + or spaces)
+    const BUSINESS_PHONE = '8801814529392';
+    // Company name for messages
+    const COMPANY = 'Estrovia Private Limited';
+
+    /***** Helpers *****/
+    function openWhatsApp(urlText){
+      const url = 'https://wa.me/' + BUSINESS_PHONE + '?text=' + encodeURIComponent(urlText);
+      window.open(url, '_blank');
+    }
+
+    function orderPackage(title, price){
+      // Find preview image if user uploaded one (we attach preview src to input's sibling img)
+      const card = document.querySelector(`[data-id="${title.toLowerCase().replace(/[^a-z0-9]/g,'-')}"]`) ||
+                   event?.currentTarget?.closest('.card');
+      // build message
+      let msg = `Hello ${COMPANY}! I want to buy: ${title} | Price: ${price}.`;
+      // attach image note if preview exists for the same card (search by title)
+      try {
+        // find card by matching title text (safe fallback)
+        const cards = document.querySelectorAll('.card');
+        for (const c of cards) {
+          const h = c.querySelector('h3')?.textContent?.trim();
+          if (h && title.toLowerCase().includes(h.toLowerCase().split(' ')[0])) {
+            const p = c.querySelector('.upload-preview');
+            if (p && p.src) {
+              msg += ` I have attached an example image.`; // cannot upload via wa.me link; manual mention
+            }
+            break;
+          }
+        }
+      } catch(e){}
+      openWhatsApp(msg);
+    }
+
+    function openWhatsAppSupport(){
+      openWhatsApp(`Hello ${COMPANY}! I need support. Please assist.`);
+    }
+
+    function openDetails(title, description, price){
+      const html = `
+        <div class="modal-backdrop" onclick="closeModal(event)">
+          <div class="modal" onclick="event.stopPropagation()">
+            <button class="close-x" onclick="closeModal()">&times;</button>
+            <h3>${title}</h3>
+            <p style="color:var(--muted)">${description}</p>
+            <p style="font-weight:900;font-size:18px;margin-top:12px">${price}</p>
+            <div style="margin-top:14px;display:flex;gap:10px">
+              <button class="btn3d" onclick="orderPackage('${title}','${price}');closeModal();">Order via WhatsApp</button>
+              <button class="btn-ghost" onclick="closeModal()">Close</button>
+            </div>
+          </div>
+        </div>
+      `;
+      showModal(html);
+    }
+
+    function showModal(html){
+      const root = document.getElementById('modalRoot');
+      root.innerHTML = html;
+      root.style.display = 'block';
+    }
+    function closeModal(e){
+      const root = document.getElementById('modalRoot');
+      root.style.display = 'none';
+      root.innerHTML = '';
+    }
+
+    function openModal(key){
+      if (key === 'privacy') {
+        const html = `
+        <div class="modal-backdrop" onclick="closeModal(event)">
+          <div class="modal" onclick="event.stopPropagation()">
+            <button class="close-x" onclick="closeModal()">&times;</button>
+            <h3>Privacy Policy — Estrovia Private Limited</h3>
+            <p style="color:var(--muted)">এই পলিসি প্রদর্শন করে আমরা কিভাবে ব্যবহারকারীর ডেটা সংগ্রহ, ব্যবহার এবং রক্ষা করি। আমরা কেবলমাত্র যোগাযোগ তথ্য (যেমন নাম, ইমেইল, ফোন) এবং আপলোড করা কনটেন্ট/ছবি যাতে সার্ভিস প্রদান করা যায় তা সংগ্রহ করি। ব্যবহারকারী চাইলে ডেটা মুছার অনুরোধ করতে পারবেন।</p>
+            <h4 style="margin-top:12px">ডেটা সংগ্রহ</h4>
+            <ul style="color:var(--muted)">
+              <li>অর্ডার ও যোগাযোগের জন্য নাম, ফোন, মেসেজ</li>
+              <li>আপলোড করা কনটেন্ট (ইমেজ)</li>
+            </ul>
+            <h4>রক্ষা ও ব্যবহারের উদ্দেশ্য</h4>
+            <p style="color:var(--muted)">ডেটা শুধুমাত্র সার্ভিস ডেলিভারি, যোগাযোগ এবং বিলিং উদ্দেশ্যে ব্যবহার করা হবে। আমরা ডেটা শেয়ার করব না তৃতীয় পক্ষের সাথে ছাড়া যদি তা আইনীভাবে প্রয়োজন হয়।</p>
+            <div style="margin-top:12px"><button class="btn-ghost" onclick="closeModal()">Close</button></div>
+          </div>
+        </div>
+        `;
+        showModal(html);
+      } else if (key === 'terms') {
+        const html = `
+        <div class="modal-backdrop" onclick="closeModal(event)">
+          <div class="modal" onclick="event.stopPropagation()">
+            <button class="close-x" onclick="closeModal()">&times;</button>
+            <h3>Terms & Conditions — Estrovia Private Limited</h3>
+            <p style="color:var(--muted)">এই শর্তাবলি সেবা ব্যবহারের নিয়মাবলী নির্ধারণ করে। অর্ডার স্থাপন করলে প্যাকেজের বিবরণ ও পেমেন্ট শর্তাবলীকে সম্মত ধরা হবে। সার্ভিস ডেলিভারি নির্দিষ্ট সময়ের মধ্যে সম্পন্ন করার চেষ্টা করা হবে, কিন্তু ফলাফল সার্চ অ্যালগরিদম পরিবর্তনের উপর নির্ভরশীল।</p>
+            <h4 style="margin-top:12px">ক্যানসেলেশন ও রিফান্ড</h4>
+            <p style="color:var(--muted)">সার্ভিস কনট্র্যাক্ট, স্টার্টার স্টেপ বা টেকনিক্যাল ওয়ার্কের প্রগতি অনুসারে ক্যানসেলেশন ও পার্শিয়াল রিফান্ড শর্ত ভিন্ন হতে পারে; বিস্তারিত জন্য যোগাযোগ করুন।</p>
+            <div style="margin-top:12px"><button class="btn-ghost" onclick="closeModal()">Close</button></div>
+          </div>
+        </div>
+        `;
+        showModal(html);
+      } else if (key === 'contact') {
+        const html = `
+        <div class="modal-backdrop" onclick="closeModal(event)">
+          <div class="modal" onclick="event.stopPropagation()">
+            <button class="close-x" onclick="closeModal()">&times;</button>
+            <h3>Quick Contact — Estrovia</h3>
+            <p style="color:var(--muted)">Send a quick message to our WhatsApp support to start your order or ask questions.</p>
+            <div style="margin-top:12px;display:flex;gap:10px;flex-wrap:wrap">
+              <button class="btn3d" onclick="openWhatsAppPrompt('I want an express consultation about SEO packages')">Express Consult</button>
+              <button class="btn3d" style="background:#0b1220;color:#fff;border:1px solid rgba(255,255,255,0.04)" onclick="openWhatsAppPrompt('I want to discuss Enterprise solutions')">Enterprise</button>
+              <button class="btn-ghost" onclick="closeModal()">Close</button>
+            </div>
+          </div>
+        </div>
+        `;
+        showModal(html);
+      }
+    }
+
+    function openWhatsAppPrompt(message){
+      openWhatsApp(message);
+      closeModal();
+    }
+
+    function scrollToPackages(){
+      document.getElementById('packages').scrollIntoView({behavior:'smooth'});
+    }
+
+    // preview uploaded image (client-side)
+    function previewImage(evt, inputEl){
+      const file = evt.target.files && evt.target.files[0];
+      const preview = inputEl.parentElement.querySelector('.upload-preview');
+      if (!file) { preview.style.display='none'; preview.src=''; return; }
+      const reader = new FileReader();
+      reader.onload = function(e){ preview.src = e.target.result; preview.style.display='block'; }
+      reader.readAsDataURL(file);
+    }
+
+    // set footer year
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    // accessibility: handle escape to close modal
+    window.addEventListener('keydown', (e) => { if (e.key === 'Escape') closeModal(); });
+
+    // Add small entrance animation after load
+    window.addEventListener('load', () => {
+      document.querySelectorAll('.card').forEach((c,i) => {
+        c.style.opacity = 0; c.style.transform = 'translateY(18px)';
+        setTimeout(()=> { c.style.transition = 'opacity .5s ease, transform .5s cubic-bezier(.2,.9,.3,1)'; c.style.opacity=1; c.style.transform='translateY(0)'; }, 120 * i);
+      });
+    });
+  </script>
+</body>
+</html>
