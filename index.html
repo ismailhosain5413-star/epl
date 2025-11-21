@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Estrovia Private Limited</title>
+  <title>Estrovia </title>
   <meta name="description" content="Estrovia Pvt Ltd — Social & Search SEO packages. Order via WhatsApp.">
   <style>
     /* --- Base / Dark Theme --- */
@@ -115,25 +115,186 @@
 </head>
 <body>
 
-  <!-- Header -->
-  <header>
-<div class="brand">
-  <div class="logo">
-    <img src="https://pps.whatsapp.net/v/t61.24694-24/534425748_3440515866087990_8837775937380615199_n.jpg?ccb=11-4&oh=01_Q5Aa3AFdR_lXn2JF-vR9-MACnAahK3LCQlWV0uGdCcNg-5W40A&oe=69235A04&_nc_sid=5e03e0&_nc_cat=108" alt="Estrovia Logo" style="width:50px; height:50px; border-radius:50%; object-fit:cover;">
+<!-- 2025 Premium Glassmorphic Header -->
+<style>
+  .header {
+    width: 100%;
+    padding: 14px 24px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(16px) saturate(180%);
+    border-radius: 18px;
+    margin: 14px auto;
+    box-shadow: 0 8px 32px rgba(0,0,0,0.35);
+    border: 1px solid rgba(255,255,255,0.12);
+    position: relative;
+  }
+
+  .header::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: 18px;
+    padding: 1px;
+    background: linear-gradient(135deg,#ff00cc,#00e1ff,#ff8c00,#8a2be2);
+    mask: 
+      linear-gradient(#fff 0 0) content-box,
+      linear-gradient(#fff 0 0);
+    mask-composite: exclude;
+    pointer-events: none;
+    opacity: 0.22;
+  }
+
+  .brand {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+  }
+
+  .logo img {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2.5px solid rgba(255,255,255,0.4);
+    box-shadow: 0 6px 18px rgba(0,0,0,0.45);
+    transition: 0.3s;
+  }
+
+  .logo img:hover {
+    transform: scale(1.05) rotate(2deg);
+    box-shadow: 0 8px 25px rgba(255,255,255,0.4);
+  }
+
+  .title {
+    font-size: 24px;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+  }
+
+  nav {
+    display: flex;
+    gap: 24px;
+    align-items: center;
+  }
+
+  nav a {
+    color: var(--muted);
+    font-weight: 600;
+    font-size: 15px;
+    position: relative;
+    transition: 0.2s;
+  }
+
+  nav a::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -3px;
+    width: 0%;
+    height: 2px;
+    background: white;
+    border-radius: 6px;
+    transition: 0.3s;
+  }
+
+  nav a:hover {
+    color: white;
+  }
+
+  nav a:hover::after {
+    width: 100%;
+  }
+
+  @media(max-width: 650px) {
+    nav {
+      display: none;
+    }
+    .title {
+      font-size: 20px;
+    }
+    .logo img {
+      width: 52px;
+      height: 52px;
+    }
+  }
+</style>
+
+
+<header class="header">
+  <div class="brand">
+    <div class="logo">
+      <img src="https://pps.whatsapp.net/v/t61.24694-24/534425748_3440515866087990_8837775937380615199_n.jpg?ccb=11-4&oh=01_Q5Aa3AFdR_lXn2JF-vR9-MACnAahK3LCQlWV0uGdCcNg-5W40A&oe=69235A04&_nc_sid=5e03e0&_nc_cat=108" 
+           alt="Estrovia Logo">
+    </div>
+
+    <div>
+      <div class="title">Estrovia Store</div>
+      <div style="font-size:12px;color:var(--muted)">Social & Search SEO</div>
+    </div>
   </div>
-  <div>
-    <div class="title">Estrovia Store</div>
-    <div style="font-size:12px;color:var(--muted)">Social & Search SEO</div>
-  </div>
-</div>
+
+  <nav>
+    <a href="#packages">Packages</a>
+    <a href="#services">Services</a>
+
+    <!-- 🔥 WhatsApp Redirect -->
+    <a href="https://wa.me/8801814529392" target="_blank">Support</a>
+  </nav>
+</header>
+
 
 </div>
 
-<!-- Cool Live News Bar -->
-<div style="background: rgba(0,0,0,0.5); color: #fff; padding: 8px 10px; font-weight: bold; font-family: Arial, sans-serif; border-radius: 8px; overflow: hidden; white-space: nowrap;">
-  <marquee behavior="scroll" direction="left" scrollamount="6">
-    📰 Breaking News: Estrovia Pvt Ltd launches new SEO packages! Stay tuned for more updates. 🚀
-  </marquee>
+
+
+<!-- Attached Modern Live News Bar -->
+<style>
+  .attached-news-bar {
+    width: 100%;
+    margin-top: -5px; /* pulls it closer to the header */
+    background: rgba(255, 255, 255, 0.10);
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+    border-bottom-left-radius: 18px;
+    border-bottom-right-radius: 18px;
+    padding: 10px 0;
+    overflow: hidden;
+    position: relative;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.25);
+    border-top: 1px solid rgba(255,255,255,0.25);
+  }
+
+  .attached-news-text {
+    display: inline-block;
+    white-space: nowrap;
+    animation: smoothScroll 15s linear infinite;
+    font-size: 15px;
+    font-weight: 600;
+    color: #ffffff;
+    padding-left: 100%;
+  }
+
+  @keyframes smoothScroll {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-100%); }
+  }
+
+  @media (max-width: 600px) {
+    .attached-news-text {
+      font-size: 13px;
+    }
+  }
+</style>
+
+<div class="attached-news-bar">
+  <div class="attached-news-text">
+    📰 Estrovia — New Premium SEO Packages Launched! 🚀 | 💎 Faster Ranking • Real Organic Growth • Smart Pricing | 🎯 TikTok Boost • FB Promo • Website SEO Now Available!
+  </div>
+</div>
+
 </div>
 
 <!--Start of Tawk.to Script-->
@@ -150,31 +311,101 @@ s0.parentNode.insertBefore(s1,s0);
 </script>
 <!--End of Tawk.to Script-->
 
-    </div>
+</div>
 
-    <div style="display:flex;gap:12px;align-items:center">
-      <div class="live">LIVE SUPPORT • 24/7</div>
-      <nav style="display:flex;gap:12px;align-items:center">
-        <a href="#packages" style="color:var(--muted);font-weight:700">প্যাকেজ</a>
-        <a href="#brands" style="color:var(--muted);font-weight:700">ব্র্যান্ড</a>
-        <a href="#" onclick="openModal('privacy');return false" style="color:var(--muted);font-weight:700">প্রাইভেসি</a>
-        <a href="#" onclick="openModal('terms');return false" style="color:var(--muted);font-weight:700">শর্ত</a>
-      </nav>
-    </div>
-  </header>
+<!-- TOP NAV + LIVE STATUS -->
+<div style="display:flex;gap:14px;align-items:center;margin-bottom:8px;">
+  <div class="live" style="
+    padding:6px 14px;
+    background:rgba(255,255,255,0.15);
+    backdrop-filter:blur(12px);
+    -webkit-backdrop-filter:blur(12px);
+    border-radius:10px;
+    font-weight:700;
+    color:#fff;
+    box-shadow:0 3px 10px rgba(0,0,0,0.25);
+    letter-spacing:0.3px;
+  ">
+    🔴 LIVE SUPPORT • ২৪/৭
+  </div>
 
-  <!-- Hero -->
-  <section class="hero">
-    <h1>অত্যাধুনিক Social & Search SEO সার্ভিস</h1>
-    <p>Facebook, Instagram, X, YouTube, Google Search, TikTok — এক জায়গায় সম্পূর্ণ ডিজিটাল বৃদ্ধির পরিকল্পনা। প্রতিটি প্যাকেজে ছবি যোগ করার অপশন আছে যাতে আপনি আপনার কনটেন্ট দ্রুত শেয়ার করতে পারেন।</p>
+  <nav style="display:flex;gap:18px;align-items:center;">
+    <a href="#packages" style="color:var(--muted);font-weight:700;transition:0.25s;">প্যাকেজ</a>
+    <a href="#brands" style="color:var(--muted);font-weight:700;transition:0.25s;">ব্র্যান্ড</a>
+    <a href="#" onclick="openModal('privacy');return false" style="color:var(--muted);font-weight:700;transition:0.25s;">প্রাইভেসি</a>
+    <a href="#" onclick="openModal('terms');return false" style="color:var(--muted);font-weight:700;transition:0.25s;">শর্ত</a>
 
-    <div class="hero-actions">
-      <button class="btn3d" onclick="openModal('contact')">এক্সপ্রেস অর্ডার</button>
-      <button class="btn3d" style="background:#0b1220;color:#fff;border:1px solid rgba(255,255,255,0.04)" onclick="scrollToPackages()">সব প্যাকেজ দেখুন</button>
-    </div>
-  </section>
+    <!-- WhatsApp Support -->
+    <a href="https://wa.me/8801814529392" target="_blank" style="
+      color:#00ffbb;
+      font-weight:800;
+      padding:6px 12px;
+      border-radius:8px;
+      background:rgba(0,255,187,0.1);
+      backdrop-filter:blur(6px);
+      transition:0.25s;
+    ">সাপোর্ট</a>
+  </nav>
+</div>
 
-  <div class="container">
+</header>
+
+<!-- 0.5cm (8px) Down Gap -->
+<div style="height:8px;"></div>
+
+<!-- HERO SECTION -->
+<section class="hero" style="
+  text-align:center;
+  max-width:850px;
+  margin:auto;
+  padding:65px 20px;
+">
+  <h1 style="
+    font-size:34px;
+    font-weight:800;
+    margin-bottom:18px;
+    letter-spacing:0.3px;
+  ">
+    অত্যাধুনিক Social & Search SEO সার্ভিস
+  </h1>
+
+  <p style="
+    font-size:17px;
+    color:var(--muted);
+    line-height:1.75;
+    margin-bottom:32px;
+  ">
+    Facebook, Instagram, X, YouTube, Google Search, TikTok —  
+    সব প্ল্যাটফর্মের সম্পূর্ণ ডিজিটাল গ্রোথ সল্যুশন।  
+    প্রতিটি প্যাকেজে ছবি আপলোড করার সুবিধা আছে যাতে আপনার কনটেন্ট আরও দ্রুত ছড়িয়ে পড়ে।
+  </p>
+
+  <div class="hero-actions" style="
+    display:flex;
+    justify-content:center;
+    gap:18px;
+  ">
+    <button class="btn3d" onclick="openModal('contact')" style="
+      padding:14px 32px;
+      font-size:17px;
+    ">
+      🚀 এক্সপ্রেস অর্ডার
+    </button>
+
+    <button class="btn3d" style="
+      background:#0b1220;
+      color:#fff;
+      border:1px solid rgba(255,255,255,0.15);
+      padding:14px 32px;
+      font-size:17px;
+    " onclick="scrollToPackages()">
+      📦 সব প্যাকেজ দেখুন
+    </button>
+  </div>
+</section>
+
+<div class="container">
+
 
     <!-- Packages -->
     <section id="packages">
@@ -404,35 +635,101 @@ s0.parentNode.insertBefore(s1,s0);
     function openModal(key){
       if (key === 'privacy') {
         const html = `
-        <div class="modal-backdrop" onclick="closeModal(event)">
-          <div class="modal" onclick="event.stopPropagation()">
-            <button class="close-x" onclick="closeModal()">&times;</button>
-            <h3>Privacy Policy — Estrovia Private Limited</h3>
-            <p style="color:var(--muted)">এই পলিসি প্রদর্শন করে আমরা কিভাবে ব্যবহারকারীর ডেটা সংগ্রহ, ব্যবহার এবং রক্ষা করি। আমরা কেবলমাত্র যোগাযোগ তথ্য (যেমন নাম, ইমেইল, ফোন) এবং আপলোড করা কনটেন্ট/ছবি যাতে সার্ভিস প্রদান করা যায় তা সংগ্রহ করি। ব্যবহারকারী চাইলে ডেটা মুছার অনুরোধ করতে পারবেন।</p>
-            <h4 style="margin-top:12px">ডেটা সংগ্রহ</h4>
-            <ul style="color:var(--muted)">
-              <li>অর্ডার ও যোগাযোগের জন্য নাম, ফোন, মেসেজ</li>
-              <li>আপলোড করা কনটেন্ট (ইমেজ)</li>
-            </ul>
-            <h4>রক্ষা ও ব্যবহারের উদ্দেশ্য</h4>
-            <p style="color:var(--muted)">ডেটা শুধুমাত্র সার্ভিস ডেলিভারি, যোগাযোগ এবং বিলিং উদ্দেশ্যে ব্যবহার করা হবে। আমরা ডেটা শেয়ার করব না তৃতীয় পক্ষের সাথে ছাড়া যদি তা আইনীভাবে প্রয়োজন হয়।</p>
-            <div style="margin-top:12px"><button class="btn-ghost" onclick="closeModal()">Close</button></div>
-          </div>
-        </div>
+<div class="modal-backdrop" onclick="closeModal(event)">
+  <div class="modal" onclick="event.stopPropagation()">
+    <button class="close-x" onclick="closeModal()">&times;</button>
+    <h3>Privacy Policy — Estrovia Private Limited</h3>
+    <p style="color:var(--muted)">
+      এই প্রাইভেসি পলিসি ব্যাখ্যা করে আমরা কীভাবে ব্যবহারকারীর ব্যক্তিগত এবং সংবেদনশীল তথ্য সংগ্রহ, ব্যবহার এবং সুরক্ষিত রাখি। আমাদের লক্ষ্য হলো ব্যবহারকারীর ডেটার নিরাপত্তা নিশ্চিত করা এবং শুধুমাত্র সার্ভিস প্রদানের উদ্দেশ্যে তা ব্যবহার করা। আমরা কেবল প্রয়োজনীয় তথ্য সংগ্রহ করি, যেমন যোগাযোগের তথ্য (নাম, ইমেইল, ফোন) এবং ব্যবহারকারীর আপলোড করা কনটেন্ট/ছবি। ব্যবহারকারী যেকোন সময় তাদের ডেটা মুছার জন্য অনুরোধ করতে পারবেন।
+    </p>
+    
+    <h4 style="margin-top:12px">ডেটা সংগ্রহের ধরন</h4>
+    <ul style="color:var(--muted)">
+      <li>যোগাযোগ ও অর্ডার প্রসেসিং-এর জন্য নাম, ফোন নম্বর, ইমেইল এবং মেসেজ</li>
+      <li>সার্ভিস প্রদান ও কাস্টমাইজেশনের জন্য আপলোড করা কনটেন্ট/ছবি</li>
+      <li>ওয়েবসাইট ব্যবহারের সময় অ্যানোনিমাস কুকিজ ও লগ ডেটা (যেমন IP ঠিকানা, ব্রাউজার টাইপ)</li>
+    </ul>
+    
+    <h4 style="margin-top:12px">ডেটার ব্যবহার ও উদ্দেশ্য</h4>
+    <p style="color:var(--muted)">
+      সংগ্রহ করা ডেটা শুধুমাত্র সার্ভিস ডেলিভারি, ব্যবহারকারীর সাথে যোগাযোগ, বিলিং, অর্ডার ম্যানেজমেন্ট এবং সাপোর্টের জন্য ব্যবহার করা হবে। আমরা ব্যক্তিগত তথ্য তৃতীয় পক্ষের সঙ্গে শেয়ার করব না, তবে আইনগত বাধ্যবাধকতার কারণে শেয়ার করতে হতে পারে। এছাড়া, আমাদের সাইটের নিরাপত্তা ও কার্যকারিতা উন্নত করতে ডেটা ব্যবহার করা হতে পারে।
+    </p>
+    
+    <h4 style="margin-top:12px">ব্যবহারকারীর অধিকার</h4>
+    <ul style="color:var(--muted)">
+      <li>ব্যবহারকারী তাদের ব্যক্তিগত তথ্য দেখতে, আপডেট করতে বা মুছতে পারবেন।</li>
+      <li>ডেটা প্রক্রিয়াকরণ সংক্রান্ত কোনো প্রশ্ন বা অভিযোগের জন্য আমাদের সাথে যোগাযোগ করতে পারবেন।</li>
+    </ul>
+    
+    <div style="margin-top:12px">
+      <button class="btn-ghost" onclick="closeModal()">Close</button>
+    </div>
+  </div>
+</div>
+
         `;
         showModal(html);
       } else if (key === 'terms') {
         const html = `
-        <div class="modal-backdrop" onclick="closeModal(event)">
-          <div class="modal" onclick="event.stopPropagation()">
-            <button class="close-x" onclick="closeModal()">&times;</button>
-            <h3>Terms & Conditions — Estrovia Private Limited</h3>
-            <p style="color:var(--muted)">এই শর্তাবলি সেবা ব্যবহারের নিয়মাবলী নির্ধারণ করে। অর্ডার স্থাপন করলে প্যাকেজের বিবরণ ও পেমেন্ট শর্তাবলীকে সম্মত ধরা হবে। সার্ভিস ডেলিভারি নির্দিষ্ট সময়ের মধ্যে সম্পন্ন করার চেষ্টা করা হবে, কিন্তু ফলাফল সার্চ অ্যালগরিদম পরিবর্তনের উপর নির্ভরশীল।</p>
-            <h4 style="margin-top:12px">ক্যানসেলেশন ও রিফান্ড</h4>
-            <p style="color:var(--muted)">সার্ভিস কনট্র্যাক্ট, স্টার্টার স্টেপ বা টেকনিক্যাল ওয়ার্কের প্রগতি অনুসারে ক্যানসেলেশন ও পার্শিয়াল রিফান্ড শর্ত ভিন্ন হতে পারে; বিস্তারিত জন্য যোগাযোগ করুন।</p>
-            <div style="margin-top:12px"><button class="btn-ghost" onclick="closeModal()">Close</button></div>
-          </div>
-        </div>
+<div class="modal-backdrop" onclick="closeModal(event)">
+  <div class="modal" onclick="event.stopPropagation()">
+    <button class="close-x" onclick="closeModal()">&times;</button>
+    <h3>Terms & Conditions — Estrovia Private Limited</h3>
+    <p style="color:var(--muted)">
+      এই শর্তাবলি আমাদের সেবার ব্যবহার এবং ক্রয়-সংক্রান্ত নিয়মাবলী নির্ধারণ করে। অর্ডার স্থাপন করলে প্যাকেজের বিবরণ, পেমেন্ট শর্তাবলী এবং এই শর্তাবলিকে সম্মত ধরা হবে। সার্ভিস ডেলিভারি নির্দিষ্ট সময়ের মধ্যে সম্পন্ন করার চেষ্টা করা হবে, তবে ফলাফল সার্চ অ্যালগরিদম, প্রযুক্তিগত সমস্যা বা অন্যান্য কারণের উপর নির্ভর করতে পারে।
+    </p>
+    
+    <h4 style="margin-top:12px">অর্ডার প্রক্রিয়াকরণ</h4>
+    <ul style="color:var(--muted)">
+      <li>অর্ডার স্থাপন করলে তা প্রক্রিয়াকরণের জন্য ধ্রুবক হবে।</li>
+      <li>পেমেন্ট কনফার্ম হওয়ার পরে অর্ডার প্রক্রিয়ার স্টার্ট হয়।</li>
+      <li>অর্ডার আপডেট বা পরিবর্তনের জন্য আমাদের সাথে সরাসরি যোগাযোগ করুন।</li>
+    </ul>
+    
+    <h4 style="margin-top:12px">ক্যানসেলেশন ও রিফান্ড</h4>
+    <p style="color:var(--muted)">
+      অর্ডার দেওয়ার পরে বা সার্ভিস সম্পন্ন হওয়ার পরে কোনো রিফান্ড প্রযোজ্য হবে না। ক্যানসেলেশন বা পার্শিয়াল রিফান্ড শুধুমাত্র প্রজেক্টের শুরুতে বা প্রগতি অনুযায়ী সীমিত শর্তে প্রযোজ্য হতে পারে; বিস্তারিত জানার জন্য আমাদের সাথে যোগাযোগ করুন।
+    </p>
+    
+    <h4 style="margin-top:12px">পেমেন্ট শর্তাবলী</h4>
+    <ul style="color:var(--muted)">
+      <li>সব পেমেন্ট সিকিউর প্ল্যাটফর্ম বা আমাদের নির্ধারিত চ্যানেলের মাধ্যমে করা হবে।</li>
+      <li>পেমেন্টের সময় কোনো ব্যাংক বা ট্রানজেকশন চার্জ প্রযোজ্য হলে তা ব্যবহারকারীর দায়িত্ব।</li>
+    </ul>
+    
+    <h4 style="margin-top:12px">ডেলিভারি ও সার্ভিস</h4>
+    <ul style="color:var(--muted)">
+      <li>সার্ভিস নির্দিষ্ট সময়ের মধ্যে দেওয়ার চেষ্টা করা হবে, তবে প্রযুক্তিগত কারণে বিলম্ব হতে পারে।</li>
+      <li>ফলাফল সার্চ অ্যালগরিদম বা সার্ভিসের প্রকৃতি অনুযায়ী পরিবর্তিত হতে পারে।</li>
+    </ul>
+    
+    <h4 style="margin-top:12px">ইউজার রেসপন্সিবিলিটি</h4>
+    <ul style="color:var(--muted)">
+      <li>ব্যবহারকারী প্রয়োজনীয় তথ্য এবং কনটেন্ট সঠিকভাবে প্রদান করবেন।</li>
+      <li>অপ্রত্যাশিত ফলাফল বা সার্ভিস প্রয়োগে কোনো সমস্যা হলে তা আমাদের জানান।</li>
+    </ul>
+    
+    <h4 style="margin-top:12px">ইন্টেলেকচুয়াল প্রোপার্টি</h4>
+    <p style="color:var(--muted)">
+      ওয়েবসাইটের সমস্ত কনটেন্ট, ডিজাইন, কোড এবং লোগো Estrovia Private Limited-এর সম্পত্তি। ব্যবহারকারী কেবল ব্যক্তিগত এবং নন-কমার্শিয়াল উদ্দেশ্যে ব্যবহার করতে পারবেন।
+    </p>
+    
+    <h4 style="margin-top:12px">ডেটা প্রাইভেসি</h4>
+    <p style="color:var(--muted)">
+      আমাদের প্রাইভেসি পলিসি অনুযায়ী ব্যবহারকারীর ডেটা সংগ্রহ ও ব্যবহার করা হবে। আমরা ব্যবহারকারীর সম্মতি ছাড়া কোনো তথ্য তৃতীয় পক্ষের সঙ্গে শেয়ার করব না, আইনগত বাধ্যবাধকতার ক্ষেত্রে ব্যতীত।
+    </p>
+    
+    <h4 style="margin-top:12px">আইনি শর্তাবলী</h4>
+    <p style="color:var(--muted)">
+      এই শর্তাবলি বাংলাদেশ সরকারের আইন অনুযায়ী প্রযোজ্য। ব্যবহারকারী কোনো ঝামেলা বা বিরোধ হলে তা আইনসিদ্ধ পথে সমাধান করতে সম্মত হবেন।
+    </p>
+    
+    <div style="margin-top:12px">
+      <button class="btn-ghost" onclick="closeModal()">Close</button>
+    </div>
+  </div>
+</div>
+
         `;
         showModal(html);
       } else if (key === 'contact') {
